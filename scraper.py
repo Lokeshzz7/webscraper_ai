@@ -1,5 +1,6 @@
 import selenium.webdriver as webdriver
 from selenium.webdriver.chrome.service import Service
+from bs4 import BeautifulSoup
 
 def scrape(website):
     print("chrome")
@@ -16,3 +17,11 @@ def scrape(website):
 
     finally:
         driver.quit()
+
+
+def extract_content(html_content):
+    soup = BeautifulSoup(html_content, "html.parser")
+    body_content = soup.body
+    if body_content:
+        return str(body_content)
+    return ""
