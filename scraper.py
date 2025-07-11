@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup
 def scrape(website):
     print("chrome")
 
-    path = ""
+    path = "./chromedriver.exe"
     options = webdriver.ChromeOptions()
     driver = webdriver.Chrome(service=Service(path),options=options)
 
