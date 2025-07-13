@@ -48,13 +48,13 @@ Follow these steps to set up the project on your local machine:
    ```bash
     python -m venv venv
     
-Activate the virtual environment:
+**Activate the virtual environment:**
 
-    On Windows:
+   **On Windows**:
       ```bash
     venv\Scripts\activate
 
-    On MacOS/Linux:
+   **On MacOS/Linux**:
       ```bash
     source venv/bin/activate
 
@@ -64,7 +64,7 @@ Activate the virtual environment:
     
     pip install -r requirements.txt
     
-    Make sure the requirements.txt file in your repository contains the necessary dependencies. You can manually create it if it doesn't exist. Example requirements.txt:
+Make sure the requirements.txt file in your repository contains the necessary dependencies. You can manually create it if it doesn't exist. Example requirements.txt:
 
    ```bash
 
@@ -78,13 +78,12 @@ Activate the virtual environment:
     python-dotenv
 
 4. **Downloading Chromedriver**
-    The chromedriver is necessary for Selenium to interact with Google Chrome.
-    
+
     Download Chromedriver:
-    Visit the Chromedriver download page and select the version that matches your Google Chrome version.
+       Visit the Chromedriver download page and select the version that matches your Google Chrome version.
     
     Place Chromedriver:
-    After downloading, place the chromedriver executable in the root of your project directory (where app.py is located). Alternatively, you can update the path in your code to point to wherever you've saved it.
+       After downloading, place the chromedriver executable in the root of your project directory (where app.py is located). Alternatively, you can update the path in your code to point to wherever you've saved it.
 
 5. **Run the Streamlit app**:
       
