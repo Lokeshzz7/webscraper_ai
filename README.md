@@ -1,9 +1,7 @@
 # Webscraper AI
-
 A web scraper and content parser built with Python, Selenium, Langchain, and Streamlit. This tool allows users to extract specific information from web pages by describing the data they want.
 
 ## Features
-
 - **Web Scraping**: Uses Selenium to load the page and retrieve the full HTML content.
 - **Content Extraction**: Cleans and extracts readable content from the web page (removes scripts, styles, etc.).
 - **Chunking**: Large text bodies are split into smaller chunks for more efficient processing.
@@ -13,7 +11,6 @@ A web scraper and content parser built with Python, Selenium, Langchain, and Str
 ---
 
 ## Tech Stack
-
 - **Python**: Main programming language.
 - **Selenium**: Web scraping and browser automation.
 - **Langchain**: For building the language model-driven prompt chain for parsing.
@@ -25,16 +22,13 @@ A web scraper and content parser built with Python, Selenium, Langchain, and Str
 ## Setup
 
 ### Prerequisites
-
 Before setting up the project, ensure you have the following installed:
-
 - **Python 3.7 or later**: [Download Python](https://www.python.org/downloads/)
 - **pip**: Python package installer (comes with Python by default).
 - **Google Chrome**: Install the latest version of Chrome from [Google Chrome](https://www.google.com/chrome/).
 - **chromedriver**: WebDriver for Chrome (ensure it matches your installed version of Chrome).
 
 ### Installation
-
 Follow these steps to set up the project on your local machine:
 
 1. **Clone the repository**:
@@ -42,50 +36,52 @@ Follow these steps to set up the project on your local machine:
    ```bash
    git clone https://github.com/Lokeshzz7/webscraper_ai.git
    cd webscraper_ai
+   ```
 
 2. **Create a virtual environment**:
-    In your terminal, create a virtual environment named venv (or any other name you prefer):
+   In your terminal, create a virtual environment named venv (or any other name you prefer):
    ```bash
-    python -m venv venv
-    
-**Activate the virtual environment:**
+   python -m venv venv
+   ```
 
+   **Activate the virtual environment:**
+   
    **On Windows**:
-      ```bash
-    venv\Scripts\activate
-
+   ```bash
+   venv\Scripts\activate
+   ```
+   
    **On MacOS/Linux**:
-      ```bash
-    source venv/bin/activate
+   ```bash
+   source venv/bin/activate
+   ```
 
 3. **Installing Dependencies**:
-
-      ```bash
-    
-    pip install -r requirements.txt
-    
-Make sure the requirements.txt file in your repository contains the necessary dependencies. You can manually create it if it doesn't exist. Example requirements.txt:
-
    ```bash
+   pip install -r requirements.txt
+   ```
+   
+   Make sure the requirements.txt file in your repository contains the necessary dependencies. You can manually create it if it doesn't exist. Example requirements.txt:
+   ```
+   streamlit 
+   langchain 
+   langchain_ollama
+   selenium
+   beautifulsoup4
+   lxml 
+   html5lib
+   python-dotenv
+   ```
 
-    streamlit 
-    langchain 
-    langchain_ollama
-    selenium
-    beautifulsoup4
-    lxml 
-    html5lib
-    python-dotenv
-
-4. **Downloading Chromedriver**
-
-    Download Chromedriver:
-       Visit the Chromedriver download page and select the version that matches your Google Chrome version.
-    
-    Place Chromedriver:
-       After downloading, place the chromedriver executable in the root of your project directory (where app.py is located). Alternatively, you can update the path in your code to point to wherever you've saved it.
+4. **Downloading Chromedriver**:
+   
+   Download Chromedriver:
+   Visit the Chromedriver download page and select the version that matches your Google Chrome version.
+   
+   Place Chromedriver:
+   After downloading, place the chromedriver executable in the root of your project directory (where app.py is located). Alternatively, you can update the path in your code to point to wherever you've saved it.
 
 5. **Run the Streamlit app**:
-      
-```bash
-    streamlit run main.py
+   ```bash
+   streamlit run main.py
+   ```
