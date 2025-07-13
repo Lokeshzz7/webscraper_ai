@@ -20,24 +20,6 @@ def scrape(website):
     finally:
         driver.quit()
 
-def scrape_website(website):
-    print("Connecting to Scraping Browser...")
-    sbr_connection = ChromiumRemoteConnection(SBR_WEBDRIVER, "goog", "chrome")
-    with Remote(sbr_connection, options=ChromeOptions()) as driver:
-        driver.get(website)
-        print("Waiting captcha to solve...")
-        solve_res = driver.execute(
-            "executeCdpCommand",
-            {
-                "cmd": "Captcha.waitForSolve",
-                "params": {"detectTimeout": 10000},
-            },
-        )
-        print("Captcha solve status:", solve_res["value"]["status"])
-        print("Navigated! Scraping page content...")
-        html = driver.page_source
-        return html
-
 
 def extract_content(html_content):
     soup = BeautifulSoup(html_content, "html.parser")
@@ -45,3 +27,17 @@ def extract_content(html_content):
     if body_content:
         return str(body_content)
     return ""
+
+def clean(body_content):
+    soup = BeautifulSoup(body_content,"html.parser")
+
+    for i in soup(["script","style"]):
+        i.extract()
+
+    contentc = soup.get_text(separator="\n")
+    contentc = "\n".join(i.strip() for i in contentc.splitlines() if i.strip())
+
+    return contentc
+
+def splitdom(dom,max_length=6000):
+    return [dom[i : i + max_length] for i in range(0,len(dom),max_length)]
