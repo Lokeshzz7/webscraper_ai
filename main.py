@@ -1,6 +1,7 @@
 import streamlit as st
 from scraper import scrape
 from scraper import splitdom , clean , extract_content
+from parser import parse_content
 
 st.title("Web Scraper")
 
@@ -11,7 +12,7 @@ if st.button("Scrape"):
     
     domc = scrape(url)
     
-    body = extract_content(url)
+    body = extract_content(domc)
     cleaned = clean(body)
 
     st.session_state.domc = cleaned
@@ -28,3 +29,6 @@ if "domc" in st.session_state:
             st.write("Loading")
 
             chunks = splitdom(st.session_state.domc)
+            result = parse_content(chunks,parsed)
+
+            st.write(result)
