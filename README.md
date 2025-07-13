@@ -45,22 +45,28 @@ Follow these steps to set up the project on your local machine:
 
 2. **Create a virtual environment**:
     In your terminal, create a virtual environment named venv (or any other name you prefer):
+   ```bash
     python -m venv venv
-    Activate the virtual environment:
+    
+Activate the virtual environment:
 
     On Windows:
-
+      ```bash
     venv\Scripts\activate
 
     On MacOS/Linux:
-
+      ```bash
     source venv/bin/activate
 
 3. **Installing Dependencies**:
+
+      ```bash
     
     pip install -r requirements.txt
     
     Make sure the requirements.txt file in your repository contains the necessary dependencies. You can manually create it if it doesn't exist. Example requirements.txt:
+
+   ```bash
 
     streamlit 
     langchain 
@@ -81,5 +87,6 @@ Follow these steps to set up the project on your local machine:
     After downloading, place the chromedriver executable in the root of your project directory (where app.py is located). Alternatively, you can update the path in your code to point to wherever you've saved it.
 
 5. **Run the Streamlit app**:
-
+      
+```bash
     streamlit run main.py
